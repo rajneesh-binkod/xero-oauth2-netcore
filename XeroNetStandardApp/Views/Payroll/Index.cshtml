@@ -1,0 +1,28 @@
+﻿@model dynamic
+
+<h2>Xero Payroll Timesheet</h2>
+
+<table border="1" class="table">
+    <tr>
+        <th>Employee ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Hours</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var timesheet in Model)
+    {
+<tr>
+    <td>@timesheet.EmployeeID</td>
+    <td>@timesheet.StartDate</td>
+    <td>@timesheet.EndDate</td>
+    <td>@timesheet.Hours</td>
+    <td>@timesheet.Status</td>
+</tr>
+}
+</table>
+
+<br>
+<p>
+    <button onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
+</p>
